@@ -1,0 +1,16 @@
+{%- if title != blank -%}
+  <div class="card{% if class != blank %} {{ class }}{% endif %}">
+    <div class="card__image">
+      {%- if image != blank -%}
+        {{- image | image_url: width: 250 | image_tag: class:'card__img', loading: 'lazy' -}}
+      {%- endif -%}
+    </div>
+    <div class="card__contents">
+      <h3 class="card__title h5">{{- title -}}</h3>
+      {%- if subtitle != blank -%}
+        <p class="card__subtitle p--small">{{- subtitle -}}</p>
+      {%- endif -%}
+      {%- if extra_contents -%}{{- extra_contents -}}{%- endif -%}
+    </div>
+  </div>
+{%- endif -%}

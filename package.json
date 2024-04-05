@@ -1,0 +1,20 @@
+{
+  "name": "wgentech-tylerbean",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "start": "concurrently --raw npm:serve npm:vite:serve",
+    "serve": "shopify theme dev --store wgentech-tylerbean",
+    "vite:serve": "vite build --watch",
+    "vite:build": "vite build"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.12",
+    "concurrently": "^7.6.0",
+    "fast-glob": "^3.2.12",
+    "postcss": "^8.4.18",
+    "postcss-custom-media": "^10.0.4",
+    "vite": "^3.1.0"
+  }
+}

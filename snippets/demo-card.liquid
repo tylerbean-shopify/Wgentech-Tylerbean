@@ -1,0 +1,16 @@
+{%- capture extra_contents -%}
+  {%- if fb_url != blank or ig_url != blank or tw_url != blank -%}
+    <div class="card__links">
+      {%- if fb_url != blank -%}<a href="{{- fb_url -}}" class="card__link">{%- render 'icon' with 'facebook', class: 'card__link-icon' -%}</a>{%- endif -%}
+      {%- if ig_url != blank -%}<a href="{{- ig_url -}}" class="card__link">{%- render 'icon' with 'instagram', class: 'card__link-icon' -%}</a>{%- endif -%}
+      {%- if tw_url != blank -%}<a href="{{- tw_url -}}" class="card__link">{%- render 'icon' with 'twitter', class: 'card__link-icon' -%}</a>{%- endif -%}
+    </div>
+  {%- endif -%}
+{%- endcapture -%}
+{%- render 'card',
+  class: class,
+  title: title,
+  image: image,
+  subtitle: subtitle,
+  extra_contents: extra_contents
+-%}

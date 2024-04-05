@@ -1,0 +1,12 @@
+{% comment %}
+IMPORTANT: Please do not modify or remove this file. It is automatically generated to facilitate asset loading for the theme.
+{% endcomment %}
+{%- liquid
+  assign file_name = _tag | split: "/" | last
+  assign extension = _tag | split: "." | last
+%}
+{%- if extension == 'js' -%}
+  <script type="module" src="{{ file_name | asset_url }}" crossorigin="anonymous"></script>
+{%- elsif extension == 'css' -%}
+  {{ file_name | asset_url | stylesheet_tag }}
+{%- endif -%}

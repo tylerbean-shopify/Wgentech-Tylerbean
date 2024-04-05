@@ -1,0 +1,22 @@
+# OS generated files #
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Environment files #
+.vscode
+.idea
+.nvmrc
+node_modules
+package.json
+package-lock.json
+README.md
+LICENSE.md
+postcss.config.js
+tailwind.config.cjs
+frontend/
+vite-plugins
+CHANGELOG.md

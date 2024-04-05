@@ -1,0 +1,29 @@
+.featured-cards {
+  padding: 0 0 62px;
+}
+
+.featured-cards__list {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 60px;
+
+  @media (--s) {
+    margin-top: 112px;
+  }
+}
+
+.featured-cards__item {
+  width: 100%;
+  box-shadow: 0 13px 19px 0 rgba(0, 0, 0, 0.07);
+  border-radius: 20px;
+  overflow: hidden;
+
+  @media (--s) {
+    width: calc(50% - 15px);
+  }
+
+  @media (--m) {
+    width: calc((100% - 90px) / 4);
+  }
+}

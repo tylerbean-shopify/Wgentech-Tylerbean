@@ -1,0 +1,11 @@
+{%- if title != blank -%}
+  <div class="section-heading{% if class != blank %} {{ class }}{% endif %}">
+    {%- if tagline != blank -%}
+      <p class="section-heading__tagline h6">{{- tagline -}}</p>
+    {%- endif -%}
+    <h2 class="section-heading__title h3">{{- title -}}</h2>
+    {%- if description != blank -%}
+      <div class="section-heading__description">{{- description -}}</div>
+    {%- endif -%}
+  </div>
+{%- endif -%}

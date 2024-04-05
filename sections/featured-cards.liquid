@@ -1,0 +1,102 @@
+{%- assign cards = section.blocks | where: 'type', 'card' -%}
+{%- if cards.size > 0 -%}
+  <div class="container featured-cards__container">
+    {%- render 'section-heading',
+      class: 'featured-cards__heading',
+      title: section.settings.title,
+      description: section.settings.description,
+      tagline: section.settings.tagline
+    -%}
+    <div class="featured-cards__list">
+      {%- for card in cards -%}
+        {%- render 'demo-card',
+          class: 'featured-cards__item',
+          title: card.settings.title,
+          image: card.settings.image,
+          subtitle: card.settings.subtitle,
+          fb_url: card.settings.fb_url,
+          ig_url: card.settings.ig_url,
+          tw_url: card.settings.tw_url,
+        -%}
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Featured Cards",
+  "tag": "section",
+  "class": "featured-cards",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tag line"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Card",
+      "type": "card",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Card content"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "type": "header",
+          "content": "Social Links"
+        },
+        {
+          "type": "url",
+          "id": "fb_url",
+          "label": "Facebook"
+        },
+        {
+          "type": "url",
+          "id": "ig_url",
+          "label": "Instagran"
+        },
+        {
+          "type": "url",
+          "id": "tw_url",
+          "label": "Twitter"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "Featured Cards" }
+  ]
+}
+{% endschema %}
